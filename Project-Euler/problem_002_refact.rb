@@ -1,18 +1,19 @@
 # Proj Euler 002 - sum of even fibonacci numbers under 4 mil
 
-# grab the fib sequence
-def doit( numbers=[1,2] )
+def fibonacci_upto( numbers=[1,2], ceiling=4e6 )
   numbers.collect do |num|
-    return numbers if numbers.slice(-2,2).inject(:+) >= 4e6
+    return numbers if numbers.slice(-2,2).inject(:+) >= ceiling
     p numbers << numbers.slice(-2,2).inject(:+)
-    doit(numbers)
+    fibonacci_upto(numbers)
   end
 end
 
-# add the evens
-def even_sum_it(array)
+def sum_of_evens(array)
   array.select!{|numb| numb.even?}.inject(:+)
 end
 
+##############
 ## solution ##
-puts even_sum_it(doit)
+##############
+
+puts sum_of_evens(fibonacci_upto)
