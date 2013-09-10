@@ -3,7 +3,7 @@
 def fibonacci_upto( numbers=[1,2], ceiling=4e6 )
   numbers.collect do |num|
     return numbers if numbers.slice(-2,2).inject(:+) >= ceiling
-    p numbers << numbers.slice(-2,2).inject(:+)
+    numbers << numbers.slice(-2,2).inject(:+) # for visuals: p numbers << numbers.slice(-2,2).inject(:+)
     fibonacci_upto(numbers)
   end
 end
