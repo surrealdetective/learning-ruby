@@ -6,18 +6,12 @@
 require 'prime'
 Inf = 1.0/0.0
 
-# def method_name
-
-# nth_prime = [0,1] # [1st, the prime ]
-
+nth_prime = [0,1] # [1st, the prime ]
+number = 1
 2.upto(Inf).each do |number|
   if number.prime?
-    # nth_prime ||= []
     nth_prime =[ nth_prime[0]+=1, number ]
     p nth_prime
   end
   break if nth_prime.first == 10_001
 end
-
-  
-# end
