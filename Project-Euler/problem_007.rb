@@ -16,13 +16,13 @@
 
 
 
-# Huge benchmark difference with the above
+# Huge 'require' benchmark difference with the above
 
 require 'prime'
 Inf = 1.0/0.0
-
 nth_prime = [0,1]
 number = 1
+
 2.upto(Inf).each do |number|
   if number.prime?
     nth_prime =[ nth_prime[0]+=1, number ]
@@ -32,6 +32,5 @@ number = 1
     p nth_prime
     break
   end
-  
 end
 

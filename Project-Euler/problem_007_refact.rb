@@ -1,8 +1,8 @@
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 # What is the 10 001st prime number?
+require 'prime'
 
 def find_prime_numbered(nth)#nth
-  require 'prime'
   @Inf = 1.0/0.0
   counter = 0
   prime_number = 0
@@ -18,5 +18,5 @@ def find_prime_numbered(nth)#nth
   end
 end
 
-# puts find_prime_numbered(10001)
-find_prime_numbered(10001)
+puts find_prime_numbered(10001)
+# find_prime_numbered(10001)
