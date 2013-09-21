@@ -18,5 +18,41 @@ def find_prime_numbered(nth)#nth
   end
 end
 
-puts find_prime_numbered(10001)
-# find_prime_numbered(10001)
+# puts find_prime_numbered(10001)
+find_prime_numbered(10001)
+
+
+def find_prime_without_inf(nth)#nth
+  i = 1
+  counter = 0
+  prime_number = 0
+  until counter == nth
+    i += 1
+    if i.prime?
+      prime_number = i
+      counter += 1
+      # puts "numbered: #{counter}\t#{prime_number}" # uncomment for visuals
+    end    
+  end
+  return prime_number 
+end
+
+# puts find_prime_without_inf(10001)
+find_prime_without_inf(10001)
+
+
+def find_prime_without_reassigning_var(nth)#nth
+  i = 1
+  counter = 0
+  until counter == nth
+    i += 1
+    counter += 1 if i.prime?
+  end
+  return i
+end
+
+# puts find_prime_without_reassigning_var(10001)
+find_prime_without_reassigning_var(10001)
+
+
+# recursively

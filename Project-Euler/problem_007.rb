@@ -16,7 +16,7 @@
 
 
 
-# Huge 'require' benchmark difference with the above
+# 'require' benchmark difference with the above
 
 require 'prime'
 Inf = 1.0/0.0
