@@ -3,24 +3,20 @@
 
 def find_prime_numbered(nth)#nth
   require 'prime'
-  ##################
-    # check all numbers (increasingly)
-    # until you've found 10001 of them
-    
   @Inf = 1.0/0.0
-  # 2.step(nth, 1) do |iterator| 
-    # debugger
   counter = 0
   prime_number = 0
   for i in 1..@Inf
-    break if counter == nth
-    
+    if counter == nth
+      return prime_number 
+    end
     if i.prime?
       prime_number = i
       counter += 1
-      puts "numbered: #{counter}\t#{prime_number}"
+      # puts "numbered: #{counter}\t#{prime_number}" # uncomment for visuals
     end    
-  end    
+  end
 end
 
+# puts find_prime_numbered(10001)
 find_prime_numbered(10001)
