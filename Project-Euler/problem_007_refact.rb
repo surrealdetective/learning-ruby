@@ -54,6 +54,7 @@ end
 # puts find_prime_without_reassigning_var(10001)
 find_prime_without_reassigning_var(10001)
 
+
 def find_prime_without_reassigning_var_return(nth)
   number = 1
   counter = 0
@@ -63,3 +64,11 @@ def find_prime_without_reassigning_var_return(nth)
   end
   return number
 end
+
+# way simpler thanks to cjl
+def cleaner_prime(nth)
+  Prime.take(nth).pop
+end
+
+# puts cleaner_prime(10001)
+cleaner_prime(10001)
