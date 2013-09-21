@@ -1,8 +1,8 @@
 require "benchmark"
-require_relative 'problem_007'
+# require_relative 'problem_007'
 require_relative 'problem_007_refact'
 
-iterations = 5
+iterations = 50
 
 Benchmark.bm(27) do |bm|
   # bm.report('problem_007:') do
@@ -20,8 +20,5 @@ Benchmark.bm(27) do |bm|
   bm.report("007_re: no var asgn") do
     iterations.times { find_prime_without_reassigning_var(10001) }
   end
-end
 
-###########################################################################
-# results #
-###########################################################################
+end
