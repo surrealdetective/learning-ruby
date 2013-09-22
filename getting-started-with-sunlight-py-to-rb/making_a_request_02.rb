@@ -67,10 +67,12 @@ uri.query = URI.encode_www_form( query_params ) # automatically adds the ? to st
 # URI attributes become the URL and query string
 
 require 'open-uri'
+
 puts uri.open.read  # pp here returns the string, not the json object for some reason
 
 # or
 require 'net/http'
+
 puts Net::HTTP.get(uri)
 
 # Again Without Comments:
@@ -83,3 +85,13 @@ puts Net::HTTP.get(uri)
 
 #######################
 # Look into: HTTPClient, maybe be great altenative to Typhoeus
+
+# Alternative with Typhoeus
+
+require 'typhoeus'
+
+request = Typhoeus::Request.new( endpoint, params: query_params ).run
+
+data = JSON.parse(request.response_body)
+
+pp data
