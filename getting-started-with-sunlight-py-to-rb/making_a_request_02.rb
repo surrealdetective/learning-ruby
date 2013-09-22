@@ -80,3 +80,6 @@ puts Net::HTTP.get(uri)
   uri = URI.parse(endpoint)
   uri.query = URI.encode_www_form( query_params )
   puts uri.open.read
+
+#######################
+# Look into: HTTPClient, maybe be great altenative to Typhoeus
