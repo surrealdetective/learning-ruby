@@ -1,8 +1,10 @@
 # Query for Digital Undivided Hackathon Dev Discount
-# Hit http://www.digitalundivided.com/hack with the parameter of name, your name, get or post for the json object
+# Original prompt at: http://www.digitalundivided.com/hacktest.html
+# "Test": Hit http://www.digitalundivided.com/hack with the parameter of name, your name, get or post for the json object
+
 require 'pp'
 
-# 1)Type the query string in the url bar, maybe cheating:
+# 1)Type the query string in the url bar, kinda cheating:
   # http://www.digitalundivided.com/hack/?name=Daniel%20Friedman
 
 # 2)With URI
@@ -17,7 +19,7 @@ require 'pp'
   endpoint = "http://www.digitalundivided.com/hack"
   request = Typhoeus::Request.new( endpoint, params: { name: "Daniel Friedman" }).run
   pp "\t#{request.response_body.to_s}"
-  # # => 301 to http://www.digitalundivided.com/hack/?name=Daniel%20Friedman
+  # => 301 to http://www.digitalundivided.com/hack/?name=Daniel%20Friedman
   # so:
   request2 = Typhoeus::Request.new( 'http://www.digitalundivided.com/hack/?name=Daniel%20Friedman').run
   puts request2.response_body
