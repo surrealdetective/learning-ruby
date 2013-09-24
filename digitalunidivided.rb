@@ -29,3 +29,8 @@ require 'pp'
   endpoint = "http://www.digitalundivided.com/hack"
   request = Typhoeus.get( endpoint, params: {name: "Daniel Friedman"}, followlocation: true)
   puts request.response_body
+
+# 5)HTTParty
+  require 'httparty'
+  response = HTTParty.get("http://www.digitalundivided.com/hack", {:query => {:name=>"alex"}})
+  puts response.parsed_response
